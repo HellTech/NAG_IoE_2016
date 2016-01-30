@@ -1,0 +1,1 @@
+Pro zapojení LCD displeje si prosím prohlédnìte soubor read_me.txt u úlohy 5.
