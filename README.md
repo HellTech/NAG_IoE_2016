@@ -1,5 +1,5 @@
 # NAG IoE 2016, soutěžní tým 30-HellTech
-Repozitář obsahující soutěžní kódy týmu 30-HellTech (SOŠ strojní a elektrotechnická Velešín) pro Cisco Networking Academy v kategorii Cisco NAG IoE 2016.
+Repozitář obsahující soutěžní kódy týmu 30-HellTech (SOŠ strojní a elektrotechnická Velešín) pro Cisco Networking Academy Game v kategorii Cisco NAG IoE 2016.
 
 Webové stránky soutěže: http://www.netacad-games.cz/ioe
 
