@@ -11,12 +11,12 @@ from threading import Timer
 
 #settings
 DHT11_PIN = 14
-secret_id = "mhBUnLi8Xc6hgswmxaDhebEjBl7DPLZ2"
-temperature_urls_list = ["https://api.thingspeak.com/update?api_key=A4B7DNDGM61G09LR&field1={}"]
-humidity_urls_list = ["https://api.thingspeak.com/update?api_key=A4B7DNDGM61G09LR&field2={}"]
+secret_id = "AAA111BBB222"
+temperature_urls_list = ["https://api.thingspeak.com/update?api_key=A4B7DLR&field1={}"]
+humidity_urls_list = ["https://api.thingspeak.com/update?api_key=A4B7D9LR&field2={}"]
 both_urls_list = ["http://ioe.zcu.cz/th.php?id="+secret_id+"&temperature={}&humidity={}",
-                  "http://helltechteam.4fan.cz/weather_rc.php?id=AAxdrtzhedfsdafasf468&temperature={}&humidity={}",
-                  "https://script.google.com/macros/s/AKfycbzCzMqdhOhU62EtsNpcgzUwCAzSlGkFSoEtYPm3FC02ymRybso/exec?TEMP_EXT={}&HUMIDITY={}"]
+                  "http://helltechteam.4fan.cz/weather_rc.php?id=AAxdf468&temperature={}&humidity={}",
+                  "https://script.google.com/macros/s/AKso/exec?TEMP_EXT={}&HUMIDITY={}"]
 report_speed_ZCU = 3  #sekundy
 update_speed = 10 
 

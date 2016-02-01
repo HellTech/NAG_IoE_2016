@@ -11,18 +11,19 @@ from threading import Timer
 
 #settings
 DHT11_PIN = 14
-secret_id = "mhBUnLi8Xc6hgswmxaDhebEjBl7DPLZ2"
-temperature_urls_list = ["https://api.thingspeak.com/update?api_key=A4B7DNDGM61G09LR&field1={}"]
-humidity_urls_list = ["https://api.thingspeak.com/update?api_key=A4B7DNDGM61G09LR&field2={}"]
+secret_id = "AAA111BBB222"
+temperature_urls_list = ["https://api.thingspeak.com/update?api_key=A4B7DLR&field1={}"]
+humidity_urls_list = ["https://api.thingspeak.com/update?api_key=A4B7D9LR&field2={}"]
 both_urls_list = ["http://ioe.zcu.cz/th.php?id="+secret_id+"&temperature={}&humidity={}",
-                  "http://helltechteam.4fan.cz/weather_rc.php?id=AAxdrtzhedfsdafasf468&temperature={}&humidity={}",
-                  "https://script.google.com/macros/s/AKfycbzCzMqdhOhU62EtsNpcgzUwCAzSlGkFSoEtYPm3FC02ymRybso/exec?TEMP_EXT={}&HUMIDITY={}"]
+                  "http://helltechteam.4fan.cz/weather_rc.php?id=AAxdf468&temperature={}&humidity={}",
+                  "https://script.google.com/macros/s/AKso/exec?TEMP_EXT={}&HUMIDITY={}"]
 report_speed_ZCU = 3  #sekundy
 update_speed = 10 
 
-#variables
+#global variables
 temperature = 0.0
 humidity = 0.0
+timer_running = True
 
 def getNowStr():
   result = ""
@@ -32,8 +33,10 @@ def getNowStr():
     return result
 
 def update_temperature():
-  global temperature
+  global timer_running, temperature
   try:
+    if not timer_running:
+		return False
     basedir = '/sys/bus/w1/devices'
     sensors = ds18b20driver.find_sensors(basedir)
     if not sensors:
@@ -45,13 +48,15 @@ def update_temperature():
             temperature = float("{0:.2f}".format(temp / 1000.0))
             break
     print getNowStr() + "Teplota "+str(temperature) + " °C"
-    lcd_display_string("Teplota "+str(temperature)+" °C   ", 1)
+    lcd_display_string("Teplota "+str(temperature)+" C   ", 1)
   except:
-    return True
+    return timer_running
 
 def update_humidity():
-  global dht11var, humidity
+  global timer_running, dht11var, humidity
   try:
+    if not timer_running:
+		return False
     count = 0
     while True:
       result = dht11var.read()
@@ -66,11 +71,13 @@ def update_humidity():
         break
       time.sleep(1)
   except:
-    return True
+    return timer_running
 		
 def send_temperature():
-  global temperature_urls_list, temperature
+  global timer_running, temperature_urls_list, temperature
   try:
+    if not timer_running:
+		return False
     num_error = 0 
     for url in temperature_urls_list:
       try:
@@ -85,11 +92,13 @@ def send_temperature():
     else:
       print getNowStr() + "Teplota - počet chyb: " + str(num_error)  
   finally:
-    return True
+    return timer_running
 
 def send_humidity():
-  global humidity_urls_list, humidity
+  global timer_running, humidity_urls_list, humidity
   try:
+    if not timer_running:
+		return False
     num_error = 0 
     for url in humidity_urls_list:
       try:
@@ -104,11 +113,13 @@ def send_humidity():
     else:
       print getNowStr() + "Vlhkost - počet chyb: " + str(num_error)  
   finally:
-    return True
+    return timer_running
 
 def send_both():
-  global both_urls_list, temperature, humidity
+  global timer_running, both_urls_list, temperature, humidity
   try:
+    if not timer_running:
+		return False
     num_error = 0 
     for url in both_urls_list:
       try:
@@ -123,7 +134,7 @@ def send_both():
     else:
       print getNowStr() + "Data - počet chyb: " + str(num_error)  
   finally:
-    return True
+    return timer_running
 
 def init_lcd_display():
   global lcd
@@ -166,8 +177,9 @@ if __name__ == "__main__":
       send_both()  
       time.sleep(report_speed_ZCU)
   except KeyboardInterrupt:
-		pass
+      pass
   finally:
+    timer_running = False
     GPIO.cleanup()
     print
     print getNowStr() + "konec programu"
