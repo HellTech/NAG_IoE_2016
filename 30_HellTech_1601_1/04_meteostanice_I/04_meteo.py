@@ -6,19 +6,15 @@ import RPi.GPIO as GPIO
 import ds18b20driver
 import dht11driver
 import lcddriver
-from threading import Timer
+from threading import Event, Thread
 #from time import *
 
 #settings
 DHT11_PIN = 14
-secret_id = "AAA111BBB222"
-temperature_urls_list = ["https://api.thingspeak.com/update?api_key=A4B7DLR&field1={}"]
-humidity_urls_list = ["https://api.thingspeak.com/update?api_key=A4B7D9LR&field2={}"]
-both_urls_list = ["http://ioe.zcu.cz/th.php?id="+secret_id+"&temperature={}&humidity={}",
-                  "http://helltechteam.4fan.cz/weather_rc.php?id=AAxdf468&temperature={}&humidity={}",
-                  "https://script.google.com/macros/s/AKso/exec?TEMP_EXT={}&HUMIDITY={}"]
-report_speed_ZCU = 3  #sekundy
-update_speed = 10 
+secret_id = "AAAbbb"
+zcu_url = "http://ioe.zcu.cz/th.php?id="+secret_id+"&temperature={}&humidity={}"
+report_speed = 60  #sekundy
+update_speed = 30  #sekundy
 
 #global variables
 temperature = 0.0
@@ -32,7 +28,7 @@ def getNowStr():
   finally:
     return result
 
-def update_temperature():
+def update_temperature(*args):
   global timer_running, temperature
   try:
     if not timer_running:
@@ -52,7 +48,7 @@ def update_temperature():
   except:
     return timer_running
 
-def update_humidity():
+def update_humidity(*args):
   global timer_running, dht11var, humidity
   try:
     if not timer_running:
@@ -73,66 +69,21 @@ def update_humidity():
   except:
     return timer_running
 		
-def send_temperature():
-  global timer_running, temperature_urls_list, temperature
+def send_data():
+  global timer_running, zcu_url, temperature, humidity
   try:
     if not timer_running:
 		return False
-    num_error = 0 
-    for url in temperature_urls_list:
-      try:
-        f = urllib2.urlopen(url.format(str(temperature)))
-        result_data = f.read().rstrip()
-        f.close()
-      except:
-        print getNowStr() + "Odeslání teploty se nezdařilo -> " + url[:20] + "..."
-        num_error += 1
-    if num_error == 0:
-      print getNowStr() + "Teplota - odeslána OK"
-    else:
-      print getNowStr() + "Teplota - počet chyb: " + str(num_error)  
-  finally:
-    return timer_running
-
-def send_humidity():
-  global timer_running, humidity_urls_list, humidity
-  try:
-    if not timer_running:
-		return False
-    num_error = 0 
-    for url in humidity_urls_list:
-      try:
-        f = urllib2.urlopen(url.format(str(humidity)))
-        result_data = f.read().rstrip()
-        f.close()
-      except:
-        print getNowStr() + "Odeslání vlhkosti se nezdařilo -> " + url[:20] + "..."
-        num_error += 1
-    if num_error == 0:
-      print getNowStr() + "Vlhkost - odeslána OK"
-    else:
-      print getNowStr() + "Vlhkost - počet chyb: " + str(num_error)  
-  finally:
-    return timer_running
-
-def send_both():
-  global timer_running, both_urls_list, temperature, humidity
-  try:
-    if not timer_running:
-		return False
-    num_error = 0 
-    for url in both_urls_list:
-      try:
-        f = urllib2.urlopen(url.format(str(temperature),str(humidity)))
-        result_data = f.read().rstrip()
-        f.close()
-      except:
-        print getNowStr() + "Odeslání dat se nezdařilo -> " + url[:20] + "..."
-        num_error += 1
-    if num_error == 0:
-      print getNowStr() + "Data - odeslána OK"
-    else:
-      print getNowStr() + "Data - počet chyb: " + str(num_error)  
+    try:
+      f = urllib2.urlopen(zcu_url.format(str(temperature),str(humidity)))
+      result_data = f.read().rstrip()
+      f.close()
+      if "Data ulozena" in result_data:      
+        print getNowStr() + "Data odeslána OK."
+      else:
+        print getNowStr() + "Data se nepodařilo uložit!" 
+    except:
+      print getNowStr() + "Chyba odeslání dat!"
   finally:
     return timer_running
 
@@ -154,6 +105,14 @@ def lcd_display_string(message,line,clear=False):
   except:
     pass 
 
+def call_repeatedly(interval, func, *args):
+    stopped = Event()
+    def loop():
+        while not stopped.wait(interval):
+            func(*args)
+    Thread(target=loop).start()    
+    return stopped.set
+
 if __name__ == "__main__":
   lcd = None
   try:
@@ -169,17 +128,17 @@ if __name__ == "__main__":
     dht11var = dht11driver.DHT11(pin = DHT11_PIN)
     update_humidity()
     #Timer for senzors
-    Timer(update_speed, update_temperature, ()).start()
-    Timer(update_speed, update_humidity, ()).start()
+    stop_update_temperature = call_repeatedly(update_speed, update_temperature, ())
+    stop_update_humidity = call_repeatedly(update_speed, update_humidity, ())
     while True:
-      send_temperature()
-      send_humidity()
-      send_both()  
-      time.sleep(report_speed_ZCU)
+      send_data()
+      time.sleep(report_speed)
   except KeyboardInterrupt:
       pass
   finally:
     timer_running = False
+    stop_update_temperature()
+    stop_update_humidity()
     GPIO.cleanup()
     print
     print getNowStr() + "konec programu"

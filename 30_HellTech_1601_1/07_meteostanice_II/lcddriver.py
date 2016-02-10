@@ -103,3 +103,11 @@ class lcd:
    def lcd_clear(self):
       self.lcd_write(LCD_CLEARDISPLAY)
       self.lcd_write(LCD_RETURNHOME)
+      
+   #turn on backlight
+   def lcd_backlight_on(self):
+      self.lcd_write(LCD_BACKLIGHT)    
+
+   #turn off backlight
+   def lcd_backlight_on(self):
+      self.lcd_write(LCD_NOBACKLIGHT)

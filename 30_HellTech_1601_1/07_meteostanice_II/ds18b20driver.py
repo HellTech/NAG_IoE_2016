@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os
 
 def find_sensors(basedir):
     return [x for x in os.listdir(basedir) if x.startswith('28')]
