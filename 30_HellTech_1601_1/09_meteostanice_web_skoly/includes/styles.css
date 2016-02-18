@@ -1,0 +1,202 @@
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #1A458F;
+  text-decoration: underline;
+}
+
+a.side {
+  font-size:11px;
+  line-height:15px;
+  color: #555;
+  text-decoration: none;
+}
+
+a:hover.side {
+  color: #1A458F;
+  text-decoration: underline;
+}
+
+body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  color: #000;
+  background: #DFECFF;
+  min-width: 991px;
+  margin:0px;
+  padding:0px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center top;
+}
+
+.header {
+  background-image: url(../images/header.png);
+  background-repeat:no-repeat;
+  //height:198px;
+  height:180px;
+}
+
+div.container {
+  width:98%; 
+  margin-top:0; //12px;
+  opacity: 0.9;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; // IE8
+  filter: alpha(opacity=90); // IE 5-7  
+}
+
+table#maintable {
+  text-align:center; 
+  margin-top:0;
+  padding-top:0;
+  margin-left:auto; 
+  margin-right:auto; 
+  width:900px;
+  background: #DFECFF;
+  box-shadow: inset 25px 0px 25px -25px rgba(0,0,0,0.45), inset -25px 0px 25px -25px rgba(0,0,0,0.45)
+}
+
+tr,td {
+  text-align:left;
+}
+
+.menu_dot {
+  margin-top:0px;
+}
+
+#table_footer {
+  background-color:#045C97;
+}
+
+#table_footer td {
+  text-align:center;
+  color:white;
+}
+
+#table_footer td a {
+  color: white;
+  text-decoration: none;
+}
+
+#table_footer td a:hover {
+  color: #E5F1FB;
+  text-decoration: underline;
+}
+
+#table_footer td a.side {
+  font-size:11px;
+  line-height:15px;
+  color: #555;
+  text-decoration: none;
+}
+
+#city_name {
+  width:100%;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Row
+{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 10px;
+}
+
+.Column
+{
+    display: table-cell;
+    text-align:center;
+    font-size: 32px;
+}
+
+.Column2
+{
+    display: table-cell;
+    text-align:left;
+    font-size: 20px;
+}
+
+
+.Column span {
+  font-size: 44px;
+}
+
+canvas {
+  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, .5);
+  opacity: 1.0;
+}
+
+#chart_name {
+  font-size:24px;
+}
+
+.apidata {
+  margin-left:5px;
+}
+
+.apidata span {
+  font-size:13px;
+  font-weight:bolder;
+}
+
+.apidata div {
+  margin-left:10px;
+}
+
+.glossymenu{
+	position: relative;
+	padding: 0 0 0 34px;
+	margin: 0 auto 0 auto;
+	background: url(../images/menub_bg.gif) repeat-x; /*tab background image path*/
+	height: 46px;
+	list-style: none;
+}
+
+.glossymenu li{
+	float:left;
+}
+
+.glossymenu li a{
+	float: left;
+	display: block;
+	color:#000;
+	text-decoration: none;
+	font-family: sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	padding:0 0 0 16px; /*Padding to accomodate left tab image. Do not change*/
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	cursor: pointer;	
+}
+
+.glossymenu li a b{
+	float: left;
+	display: block;
+	padding: 0 24px 0 8px; /*Padding of menu items*/
+}
+
+.glossymenu li.current a, .glossymenu li a:hover{
+	color: #fff;
+	background: url(../images/menub_hover_left.gif) no-repeat; /*left tab image path*/
+	background-position: left;
+}
+
+.glossymenu li.current a b, .glossymenu li a:hover b{
+	color: #fff;
+	background: url(../images/menub_hover_right.gif) no-repeat right top; /*right tab image path*/
+}
+
+
+
+
