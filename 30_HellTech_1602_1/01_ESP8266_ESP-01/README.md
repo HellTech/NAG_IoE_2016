@@ -21,7 +21,16 @@ Informace na webu výrobce: https://www.adafruit.com/products/2282
 
 ### Návod
 1.	Zapojte obvod dle schématu.
-2.	Editujte soubor /etc/inittab pomocí příkazu sudo nano /etc/inittab a vložte znak # na začátek řádků začínajích T0:23:respawn:/sbin/getty
+2.	Editujte soubor /etc/inittab pomocí příkazu
+
+   ```
+   sudo nano /etc/inittab
+   ```
+   a vložte znak # na začátek řádků začínajích 
+
+   ```
+   T0:23:respawn:/sbin/getty
+   ```
 3.	Pro komunikaci s modulem je potřeba nainstalovat terminálový program Picocom.
 
    ```
