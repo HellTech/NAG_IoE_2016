@@ -7,6 +7,7 @@
 Informace na webu výrobce: https://www.adafruit.com/products/2282
 
 ### Použité součástky
+- [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/model-b-plus/)
 - [Modul ESP-01](https://www.adafruit.com/products/2282)
 - drátové propojky.
 
