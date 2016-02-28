@@ -1,5 +1,7 @@
 # RGB color sensor TCS34725
 
+![TCS34725](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/11_RGB_color_sensor_TCS34725/image/TCS34725.jpg)
+
 Tento návod ukazuje použití RGB color sensor TCS34725 s [Raspberry Pi](https://www.raspberrypi.org/) pomocí programovacího jazyka [Python](https://www.python.org/).
 
 ### Výrobce
@@ -27,8 +29,18 @@ Informace na webu výrobce: https://www.adafruit.com/products/1334
    ```
    sudo i2cdetect -y 1
    ```
+   Adresy detekovaných zařízení by měli být:
+   - 0x70 multiplexer
+   - 0x3F LCD displej
+   - 0x29 RGB TCS34725
 3. Spusťte program pomocí příkazu
-4. 
 
-Some basic Git commands are:
+   ```
+   sudo python 11_rgb.py
+   ```
+4. Program ukončete stiskem [CTRL]+[C]
+
+### Ukázka použití
+
+[preview](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/11_RGB_color_sensor_TCS34725/image/preview.jpg)
 
