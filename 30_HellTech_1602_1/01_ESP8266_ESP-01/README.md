@@ -1,12 +1,13 @@
 # Modul ESP8266 ESP-01
 
 ### Výrobce
-https://www.adafruit.com/products/2282
+Informace na webu výrobce: https://www.adafruit.com/products/2282
 
 ### Použité součástky
-Modul ESP-01, ESP8266 ze soutěžní sady. Drátové propojky. 
+- [Modul ESP-01](https://www.adafruit.com/products/2282)
+- drátové propojky.
 
-Zapojení
+### Zapojení
 - GND: libovolný gpio kontakt GND
 - VCC: libovolný gpio kontakt +3,3 V
 - CH_PD: 3,3 V
