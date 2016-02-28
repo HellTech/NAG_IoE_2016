@@ -44,6 +44,7 @@ První verze meteostanice: https://github.com/HellTech/NAG_IoE_2016/tree/master/
    - [Návod od výrobce](https://www.raspberrypi.org/blog/the-eagerly-awaited-raspberry-pi-display/)
    - [Alternativní návod](https://www.element14.com/community/docs/DOC-78156/l/raspberry-pi-7-touchscreen-display)
 2. Zapojte obvod dle schématu.
+
    > vekovní čidla jsme umístili do krabičky vytištěné na 3D tiskárně pomocí modelu [Vented and shaded box for outdoor temp and humidity sensors](http://www.thingiverse.com/thing:146132)
 3. Ujistěte se, že máte zapnutou I2C sběrnici. 
  * [Návod na zprovoznění](https://github.com/HellTech/NAG_IoE_2016/tree/master/30_HellTech_1601_1/01_lcd_displej)
@@ -87,7 +88,7 @@ První verze meteostanice: https://github.com/HellTech/NAG_IoE_2016/tree/master/
    l - osvětlenost
    ```
    - změňte hodnoty pro přepověď počasí pomocí openweathermap (lokace, appid); appid lze získat registrací na http://openweathermap.org/ 
-   - vyplňte email na něj chcete zasílat chybová hlášení
+   - vyplňte email na nějž chcete zasílat chybová hlášení
 8. (volitelné) Prohlédněte si náš další projekt "[Zobrazení naměřených údajů na webu](https://github.com/HellTech/NAG_IoE_2016/tree/master/30_HellTech_1601_1/09_meteostanice_web_skoly)".
 Údaje naměřené naší meteostanicí jsou k dispozici na http://meteo.sosvel.cz
 
