@@ -1,8 +1,6 @@
 # Ultrasonic sensor HC-SR04
 
-![HC-SR04](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/10_ultrasonic_sensor_HC-SR04/image/HCSR04.jpg =50x)
-
-<img src="https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/10_ultrasonic_sensor_HC-SR04/image/HCSR04.jpg" alt="Drawing" style="width:20px;height:20px" />
+<img src="https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/10_ultrasonic_sensor_HC-SR04/image/HCSR04.jpg" alt="HC-SR04" width="200" style="width:200px;" />
 
 Tento návod ukazuje použití Ultrasonic sensor HC-SR04 s [Raspberry Pi](https://www.raspberrypi.org/) pomocí programovacího jazyka [Python](https://www.python.org/).
 
