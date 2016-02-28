@@ -42,5 +42,5 @@ Informace na webu výrobce: https://www.adafruit.com/products/1334
 
 ### Ukázka použití
 
-[preview](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/11_RGB_color_sensor_TCS34725/image/preview.jpg)
+![preview](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/11_RGB_color_sensor_TCS34725/image/preview.jpg)
 
