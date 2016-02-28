@@ -1,5 +1,8 @@
 # Modul ESP8266 ESP-01
 
+<img src="https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/01_ESP8266_ESP-01/image/esp-01.png" alt="ESP-01" width="300" style="width:300px;" />
+<img src="https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/01_ESP8266_ESP-01/image/esp-01_scheme.png" alt="ESP-01 scheme" width="300" style="width:300px;" />
+
 ### Výrobce
 Informace na webu výrobce: https://www.adafruit.com/products/2282
 
@@ -52,8 +55,10 @@ sudo aptitude update && sudo aptitude install picocom
    ```
    AT+GMR
    ```
-Příkaz vypíše informace o nainstalovaném firmwaru v esp modulu. Přehled dalších příkazů
- je k dispozici na http://wiki.iteadstudio.com/ESP8266_Serial_WIFI_Module
+   
+   ![Picocom](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/01_ESP8266_ESP-01/image/picocom.PNG)
+   
+   Příkaz vypíše informace o nainstalovaném firmwaru v esp modulu. Přehled dalších příkazů je k dispozici na http://wiki.iteadstudio.com/ESP8266_Serial_WIFI_Module
 8.	Terminál Picocom se ukončuje klávesovou zkratkou [CTRL]+[Q]+[A].
 9.	Řešení případných problémů.
     - Zkontrolujte zapojení.
@@ -61,4 +66,6 @@ Příkaz vypíše informace o nainstalovaném firmwaru v esp modulu. Přehled da
     - Zkuste změnit přenosovou rychlost z 115200 bps na 9600 bps.
     - Rychlost udává parametr –b v příkazu.
     - Pokud nic nepomáhá, nastavte pomocí nástoje sudo raspi-config, sběrnice I2C, serial a ISP na disable.
+    
+    ![raspi-config](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/01_ESP8266_ESP-01/image/raspi-config.png) 
 
