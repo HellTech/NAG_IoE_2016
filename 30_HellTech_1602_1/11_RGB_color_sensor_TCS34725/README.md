@@ -20,3 +20,8 @@ Informace na webu výrobce: https://www.adafruit.com/products/1334
 
 ### Návod k použití
 1. Zapojte obvod dle schématu
+2. Ujistěte se, že máte zapnutou I2C sběrnici. 
+ * [Návod na zprovoznění].(https://github.com/HellTech/NAG_IoE_2016/tree/master/30_HellTech_1601_1/01_lcd_displej)
+ * Zkontrolujte zda byla připojená I2C zařízení detekována pomocí příkazu:
+   'sudo i2cdetect -y 1'
+3. Spusťte program pomocí příkazu
