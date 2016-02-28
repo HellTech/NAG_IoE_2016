@@ -11,16 +11,16 @@ Zapojení
     RXD: GPIO 14
 
 Návod
-a.	Zapojte obvod dle schématu.
-b.	Editujte soubor /etc/inittab pomocí příkazu sudo nano /etc/inittab a vložte znak # na začátek řádků začínajích T0:23:respawn:/sbin/getty
-c.	Pro komunikaci s modulem je potřeba nainstalovat terminálový program Picocom.
+1.	Zapojte obvod dle schématu.
+2.	Editujte soubor /etc/inittab pomocí příkazu sudo nano /etc/inittab a vložte znak # na začátek řádků začínajích T0:23:respawn:/sbin/getty
+3.	Pro komunikaci s modulem je potřeba nainstalovat terminálový program Picocom.
 sudo aptitude update && sudo aptitude install picocom
-d.	Restartujte Raspberry příkazem sudo reboot
-e.	Spusťte terminál Picocom příkazem sudo picocom -b 115200 /dev/ttyAMA0 –omap crcrlf
-f.	Stiskněte klávesu [ENTER]. Pokud je vše správně do terminálu bude možné psát.
-g.	Zadejte příkaz AT+GMR a potvrďte [ENTER]. Příkaz vypíše informace o nainstalovaném
+4.	Restartujte Raspberry příkazem sudo reboot
+5.	Spusťte terminál Picocom příkazem sudo picocom -b 115200 /dev/ttyAMA0 –omap crcrlf
+6.	Stiskněte klávesu [ENTER]. Pokud je vše správně do terminálu bude možné psát.
+7.	Zadejte příkaz AT+GMR a potvrďte [ENTER]. Příkaz vypíše informace o nainstalovaném
 firmwaru v esp modulu. Přehled dalších příkazů
  je k dispozici na http://wiki.iteadstudio.com/
 ESP8266_Serial_WIFI_Module
-h.	Terminál Picocom se ukončuje klávesovou zkratkou [CTRL]+[Q]+[A].
-i.	Řešení případných problémů. Zkontrolujte zapojení. Pokud terminál Picocom nereaguje, zkuste odpojit a připojit napájení ESP modulu. Zkuste změnit přenosovou rychlost z 115200 bps na 9600 bps. Rychlost udává parametr –b v příkazu. Pokud nic nepomáhá, nastavte pomocí nástoje sudo raspi-config, sběrnice I2C, serial a ISP na disable.
+8.	Terminál Picocom se ukončuje klávesovou zkratkou [CTRL]+[Q]+[A].
+9.	Řešení případných problémů. Zkontrolujte zapojení. Pokud terminál Picocom nereaguje, zkuste odpojit a připojit napájení ESP modulu. Zkuste změnit přenosovou rychlost z 115200 bps na 9600 bps. Rychlost udává parametr –b v příkazu. Pokud nic nepomáhá, nastavte pomocí nástoje sudo raspi-config, sběrnice I2C, serial a ISP na disable.
