@@ -14,7 +14,6 @@ Informace na webu výrobce: http://www.micropik.com/PDF/HCSR04.pdf
 - [Raspberry Pi 1 Model B+](https://www.raspberrypi.org/products/model-b-plus/)
 - [Ultrasonic sensor HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)
 - I2C LCD displej 2x16 znaků, 1602
-- [Adafruit TCA9548A 1-to-8 I2C multiplexer](https://learn.adafruit.com/adafruit-tca9548a-1-to-8-i2c-multiplexer-breakout/overview)
 - drátové propojky
 
 ### Schéma zapojení
