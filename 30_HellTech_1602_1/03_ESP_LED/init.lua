@@ -10,7 +10,7 @@ print("Zjišťování IP adresy...")
 else 
 tmr.stop(1)
 print("Připojeno, IP adresa je "..wifi.sta.getip())
-dofile("ukol5.lua")
+dofile("ukol3.lua")
 end 
 end)
 
