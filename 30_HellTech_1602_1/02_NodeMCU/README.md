@@ -13,6 +13,8 @@ sudo apt-get install git
 
 git clone https://github.com/themadinventor/esptool.git
 ```
+[Schéma](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/02_NodeMCU/02_deska.png)
+
 
 c. Instalaci nového firmware neprovádějte, pokud nemáte ověřenou funkčnost propojení s ESP 
 
