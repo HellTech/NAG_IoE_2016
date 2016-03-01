@@ -1,5 +1,6 @@
 ###Návod
-
+![Schéma](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/05_ESP_meteo/05b_deska.png)
+![Schéma](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/05_ESP_meteo/05b_schem.png)
 Použité součástky
 
 Modul ESP-01 ze soutěžní sady. Drátové propojky. Čidla ds18b20 a DHT11. 2x odpor 4K7 Ω, odpor 
