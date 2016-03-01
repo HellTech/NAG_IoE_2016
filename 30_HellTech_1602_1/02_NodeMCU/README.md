@@ -8,12 +8,11 @@ Námi použitý bin soubor, jsme přibalili do zdrojových kódů.
 b. Pro nahrání nového firmware nainstalujte nástroj esptool.py pomocí příkazů
 ```
 sudo apt-get update
-```
-```
-sudo apt-get install git
-```
-git clone https://github.com/themadinventor/esptool.git
 
+sudo apt-get install git
+
+git clone https://github.com/themadinventor/esptool.git
+```
 obr. 2: schéma zapojení ESP-01 v režimu pro přepis firmware
 
 c. Instalaci nového firmware neprovádějte, pokud nemáte ověřenou funkčnost propojení s ESP 
