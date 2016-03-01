@@ -11,8 +11,10 @@ Nyní musíme komunikovat s modulem rychlostí 9600.
 picocom-b 9600 --omap crcrlf/dev/ttyAMA0.
 ```
 ###Spuštění příkazu
-Příkazy spouštíme dofile("nazev souboru")
-
+Příkazy spouštíme 
+``` 
+dofile("nazev souboru")
+```
 
  
 
