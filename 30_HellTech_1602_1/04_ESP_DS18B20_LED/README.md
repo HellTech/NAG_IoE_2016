@@ -1,6 +1,6 @@
 ###Návod
-![Schema1]
-![Schema2]
+![Schema1](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/04_ESP_DS18B20_LED/04_deska.png)
+![Schema2](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/04_ESP_DS18B20_LED/04_schem.png)
 a. Zapojte obvod dle schématu.
 
 b. Postupujte jako v předchozím úkolu. Vyplňte v souboru init.lua údaje k WiFi síti. Nahrajte do 
