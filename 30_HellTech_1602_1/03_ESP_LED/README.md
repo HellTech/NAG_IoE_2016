@@ -1,7 +1,7 @@
 ###Použité součástky
 Modul ESP-01 ze soutěžní sady. Drátové propojky. Dvě LED diody. 2x odpor 220 Ω.
 ![Schéma](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/03_ESP_LED/03_schem.png)
-![Schéma]
+![Schéma](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/03_ESP_LED/03_deska.png)
 
 
 ###Návod
