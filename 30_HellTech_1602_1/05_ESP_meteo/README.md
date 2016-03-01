@@ -6,8 +6,6 @@ Modul ESP-01 ze soutěžní sady. Drátové propojky. Čidla ds18b20 a DHT11. 2x
 
 10K Ω. Solární nabíječka.
 
-obr. 5: schéma zapojení ESP-01 s ds18b20 a DHT11, napájené solární nabíječkou
-
 Návod
 
 a. Zapojte obvod dle schématu.
