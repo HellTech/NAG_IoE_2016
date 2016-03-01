@@ -1,5 +1,6 @@
 ###Návod
-
+![Schema1]
+![Schema2]
 a. Zapojte obvod dle schématu.
 
 b. Postupujte jako v předchozím úkolu. Vyplňte v souboru init.lua údaje k WiFi síti. Nahrajte do 
