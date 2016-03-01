@@ -1,5 +1,18 @@
-# NAG IoE 2016, 4. kolo, únor 2015
-Repozitář obsahující soutěžní kódy týmu 30-HellTech (SOŠ strojní a elektrotechnická Velešín) pro Cisco Networking Academy Game v kategorii Cisco NAG IoE 2016.
+###Návod
 
-Návod k použití na https://github.com/HellTech/NAG_IoE_2016
+a. Zapojte obvod dle schématu.
+
+b. Postupujte jako v předchozím úkolu. Vyplňte v souboru init.lua údaje k WiFi síti. Nahrajte do 
+
+ESP modulu soubory z toho úkolu.
+```
+./luatool.py --port /dev/ttyAMA0 --src init.lua –dest init.lua –verbose
+
+./luatool.py --port /dev/ttyAMA0 --src ukol4.lua –dest ukol3.lua –verbose
+```
+c. Restartujte modul node.restart()
+
+d. Ve webovém prohlížeči otevřete přidělenou IP adresu. Ve výpisu je vidět aktuální naměřená 
+
+teplota.
 
