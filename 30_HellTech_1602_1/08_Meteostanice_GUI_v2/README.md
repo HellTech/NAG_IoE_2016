@@ -120,3 +120,4 @@ Tisk krabičky na 3D tiskárně
 Hotová krabička
 
 ![preview4](https://github.com/HellTech/NAG_IoE_2016/blob/master/30_HellTech_1602_1/08_Meteostanice_GUI_v2/image/preview4.jpg)
+
