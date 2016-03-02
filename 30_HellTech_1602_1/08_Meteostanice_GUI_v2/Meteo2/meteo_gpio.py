@@ -23,9 +23,6 @@ light = 0
 
 def readTemperatureIN():
 	global DHT11_PIN, temperature1, humidity1
-	temperature1 = 24.6
-	humidity1 = 67
-	return True
 	try:
 		count = 0
 		while True:
@@ -47,8 +44,6 @@ def readTemperatureIN():
 
 def readTemperatureOUT():
 	global temperature2
-	temperature2 = 3.12
-	return True
 	try:
 		basedir = '/sys/bus/w1/devices'
 		sensors = ds18b20driver.find_sensors(basedir)
@@ -66,8 +61,6 @@ def readTemperatureOUT():
 	
 def readHumidityOUT():
 	global DHT22_PIN, humidity2
-	humidity2 = 59
-	return True
 	try:
 		count = 0
 		while True:
